@@ -13,16 +13,17 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @SpringApplicationConfiguration(classes = MessageApplication.class)
 @WebAppConfiguration
 public class MessageApplicationTests {
-	@Autowired
-	private PersonRepository personRepository;
-	@Test
-	public void contextLoads() {
-		Person p = new Person();
-		p.setAge(25);
-		p.setId("1");
-		p.setName("百度盒子");
-		p.setSex("男");
-		personRepository.save(p);
-	}
+    @Autowired
+    private PersonRepository personRepository;
+
+    @Test
+    public void contextLoads() {
+        Person p = new Person();
+        p.setAge(25);
+        p.setId("1");
+        p.setName("百度盒子");
+        p.setSex("男");
+        personRepository.save(p);
+    }
 
 }

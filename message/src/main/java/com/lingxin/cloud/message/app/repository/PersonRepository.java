@@ -11,7 +11,7 @@ import java.io.Serializable;
 /**
  * Created by Mr_Li on 2016/8/30.
  */
-public interface PersonRepository extends CrudRepository<Person,Serializable> ,MongoRepository<Person,Serializable>{
-    @RestResource(path = "byNameLike",rel = "byNameLike")
-    public Person findByNameContaining(@Param("name")String name);
+public interface PersonRepository extends CrudRepository<Person, Serializable>, MongoRepository<Person, Serializable> {
+    @RestResource(path = "byNameLike", rel = "byNameLike")
+    Person findByNameContaining(@Param("name") String name);
 }

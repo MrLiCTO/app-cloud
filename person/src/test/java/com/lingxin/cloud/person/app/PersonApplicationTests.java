@@ -17,40 +17,42 @@ import java.util.List;
 @WebAppConfiguration
 public class PersonApplicationTests {
 
-	@Autowired
-	private PersonMapper personMapper;
+    @Autowired
+    private PersonMapper personMapper;
 
 
-	@Test
-	public void saveTest() {
-		Person person = new Person();
-		person.setAge(25);
-		person.setId("1");
-		person.setName("百度盒子");
-		person.setSex("男");
-		personMapper.save(person);
-	}
-	@Test
-	public void getTest() {
-		Person person = new Person();
-		person.setName("%度%");
-		PersonPojo pj=new PersonPojo();
-		pj.setPerson(person);
-		List<Person> list = personMapper.findListByPojo(pj);
-		for(Person p:list){
-			System.out.println("++++++++++++++++++++++++++++++++++++"+p.getName()+"+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-		}
-	}
-	@Test
-	public void findTest() {
-		Person person = new Person();
-		person.setName("度");
-		PersonPojo pj=new PersonPojo();
-		pj.setPerson(person);
-		List<Person> list = personMapper.selectAllByName(pj);
-		for(Person p:list){
-			System.out.println("++++++++++++++++++++++++++++++++++++"+p.getName()+"+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-		}
-	}
+    @Test
+    public void saveTest() {
+        Person person = new Person();
+        person.setAge(25);
+        person.setId("1");
+        person.setName("百度盒子");
+        person.setSex("男");
+        personMapper.save(person);
+    }
+
+    @Test
+    public void getTest() {
+        Person person = new Person();
+        person.setName("%度%");
+        PersonPojo pj = new PersonPojo();
+        pj.setPerson(person);
+        List<Person> list = personMapper.findListByPojo(pj);
+        for (Person p : list) {
+            System.out.println("++++++++++++++++++++++++++++++++++++" + p.getName() + "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        }
+    }
+
+    @Test
+    public void findTest() {
+        Person person = new Person();
+        person.setName("度");
+        PersonPojo pj = new PersonPojo();
+        pj.setPerson(person);
+        List<Person> list = personMapper.selectAllByName(pj);
+        for (Person p : list) {
+            System.out.println("++++++++++++++++++++++++++++++++++++" + p.getName() + "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        }
+    }
 
 }
