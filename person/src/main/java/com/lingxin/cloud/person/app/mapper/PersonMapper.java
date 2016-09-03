@@ -1,23 +1,32 @@
 package com.lingxin.cloud.person.app.mapper;
 
 import com.lingxin.cloud.person.app.model.Person;
-import com.lingxin.cloud.person.app.model.PersonPojo;
-import org.apache.ibatis.annotations.Insert;
+import com.lingxin.cloud.person.app.model.PersonExample;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
 @Mapper
 public interface PersonMapper {
-    @Insert("INSERT INTO person(id,name,sex,age) VALUES(#{id},#{name},#{sex},#{age})")
-    void save(Person person);
+    int countByExample(PersonExample example);
 
-    @Select("select * from person where name like #{name}")
-    List<Person> findList(String name);
+    int deleteByExample(PersonExample example);
 
-    @Select("select * from person where name like #{person.name}")
-    List<Person> findListByPojo(PersonPojo personPojo);
+    int deleteByPrimaryKey(String id);
 
-    List<Person> selectAllByName(PersonPojo personPojo);
+    int insert(Person record);
+
+    int insertSelective(Person record);
+
+    List<Person> selectByExample(PersonExample example);
+
+    Person selectByPrimaryKey(String id);
+
+    int updateByExampleSelective(@Param("record") Person record, @Param("example") PersonExample example);
+
+    int updateByExample(@Param("record") Person record, @Param("example") PersonExample example);
+
+    int updateByPrimaryKeySelective(Person record);
+
+    int updateByPrimaryKey(Person record);
 }

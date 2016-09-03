@@ -1,4 +1,6 @@
-package com.lingxin.cloud.person.app.model;
+package com.lingxin.cloud.person.app.pojo;
+
+import com.lingxin.cloud.person.app.model.Person;
 
 public class PersonPojo {
     private Person person;

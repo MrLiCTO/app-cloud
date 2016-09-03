@@ -2,24 +2,19 @@ package com.lingxin.cloud.person.app.model;
 
 public class Person {
     private String id;
-    private String name;
+
     private String sex;
+
     private Integer age;
+
+    private String name;
 
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        this.id = id == null ? null : id.trim();
     }
 
     public String getSex() {
@@ -27,7 +22,7 @@ public class Person {
     }
 
     public void setSex(String sex) {
-        this.sex = sex;
+        this.sex = sex == null ? null : sex.trim();
     }
 
     public Integer getAge() {
@@ -38,4 +33,11 @@ public class Person {
         this.age = age;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
 }

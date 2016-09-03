@@ -1,8 +1,8 @@
 package com.lingxin.cloud.person.app;
 
-import com.lingxin.cloud.person.app.mapper.PersonMapper;
+import com.lingxin.cloud.person.app.mapper.PersonCustomMapper;
 import com.lingxin.cloud.person.app.model.Person;
-import com.lingxin.cloud.person.app.model.PersonPojo;
+import com.lingxin.cloud.person.app.pojo.PersonPojo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,17 +18,17 @@ import java.util.List;
 public class PersonApplicationTests {
 
     @Autowired
-    private PersonMapper personMapper;
+    private PersonCustomMapper personCustomMapper;
 
 
     @Test
     public void saveTest() {
         Person person = new Person();
-        person.setAge(25);
-        person.setId("1");
-        person.setName("百度盒子");
+        person.setAge(24);
+        person.setId("3");
+        person.setName("百度呵呵");
         person.setSex("男");
-        personMapper.save(person);
+        personCustomMapper.save(person);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class PersonApplicationTests {
         person.setName("%度%");
         PersonPojo pj = new PersonPojo();
         pj.setPerson(person);
-        List<Person> list = personMapper.findListByPojo(pj);
+        List<Person> list = personCustomMapper.findListByPojo(pj);
         for (Person p : list) {
             System.out.println("++++++++++++++++++++++++++++++++++++" + p.getName() + "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         }
@@ -49,7 +49,7 @@ public class PersonApplicationTests {
         person.setName("度");
         PersonPojo pj = new PersonPojo();
         pj.setPerson(person);
-        List<Person> list = personMapper.selectAllByName(pj);
+        List<Person> list = personCustomMapper.selectAllByName(pj);
         for (Person p : list) {
             System.out.println("++++++++++++++++++++++++++++++++++++" + p.getName() + "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         }

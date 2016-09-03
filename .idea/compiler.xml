@@ -19,7 +19,7 @@
       </profile>
       <profile default="false" name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="config" />
@@ -31,7 +31,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="app-cloud" target="1.8" />
+      <module name="app-parent" target="1.8" />
       <module name="config" target="1.8" />
       <module name="discovery" target="1.8" />
       <module name="message" target="1.8" />

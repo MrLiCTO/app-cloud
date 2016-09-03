@@ -1,4 +1,4 @@
-package com.lingxin.cloud.person.app.model;
+package com.lingxin.cloud.person.app.response;
 
 /**
  * Created by Mr_Li on 2016/8/31.
@@ -8,15 +8,15 @@ public class JsonReturn {
     public final static Integer SUCCESS_CODE = 200;
     public final static Integer ERROR_CODE = 404;
 
-    private String code;
+    private Integer code;
     private String msg;
     private String data;
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 

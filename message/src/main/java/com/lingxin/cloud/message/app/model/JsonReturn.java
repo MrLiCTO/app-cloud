@@ -5,8 +5,8 @@ package com.lingxin.cloud.message.app.model;
  */
 public class JsonReturn {
 
-    public final static Integer SUCCESS_CODE = 200;
-    public final static Integer ERROR_CODE = 404;
+    public final static String SUCCESS_CODE = "200";
+    public final static String ERROR_CODE = "404";
 
     private String code;
     private String msg;

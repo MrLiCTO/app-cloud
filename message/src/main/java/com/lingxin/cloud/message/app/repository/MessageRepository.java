@@ -13,5 +13,5 @@ import java.io.Serializable;
  */
 public interface MessageRepository extends CrudRepository<Message, Serializable>, MongoRepository<Message, Serializable> {
     @RestResource(path = "byNameLike", rel = "byNameLike")
-    Message findByNameContaining(@Param("name") String name);
+    Message findByTitleContaining(@Param("title") String title);
 }
