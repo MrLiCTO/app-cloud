@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @FeignClient("person")
 public interface PersonService {
-    @RequestMapping(method = RequestMethod.POST, value = "/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "person/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn save(@RequestBody Person person);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/delete", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "person/delete", consumes = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn delete(@RequestBody String id);
 
-    @RequestMapping(method = RequestMethod.POST, value = "/update", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.POST, value = "person/update", consumes = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn update(@RequestBody Person person);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/list", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.GET, value = "person/list", produces = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn findAll();
 }

@@ -6,6 +6,7 @@ import com.lingxin.cloud.person.app.response.JsonReturn;
 import com.lingxin.cloud.person.app.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -42,7 +43,7 @@ public class PersonController {
     }
 
     @RequestMapping("delete")
-    public JsonReturn save(String id) {
+    public JsonReturn save(@RequestParam("id") String id) {
         JsonReturn res = new JsonReturn();
         personService.delete(id);
         res.setCode(JsonReturn.SUCCESS_CODE);

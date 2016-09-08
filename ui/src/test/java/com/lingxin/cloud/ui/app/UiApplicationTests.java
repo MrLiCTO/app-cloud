@@ -1,7 +1,11 @@
 package com.lingxin.cloud.ui.app;
 
+import com.lingxin.cloud.ui.app.model.JsonReturn;
+import com.lingxin.cloud.ui.app.service.PersonService;
+import com.lingxin.cloud.ui.app.service.UiOtherService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -11,8 +15,15 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration
 public class UiApplicationTests {
 
+    @Autowired
+    private UiOtherService uiOtherService;
+    @Autowired
+    private PersonService personService;
+
     @Test
     public void contextLoads() {
+        JsonReturn jsonReturn = uiOtherService.deletePerson("1");
+        //System.out.print(JSON.toJSON(personService.findAll()));
     }
 
 }

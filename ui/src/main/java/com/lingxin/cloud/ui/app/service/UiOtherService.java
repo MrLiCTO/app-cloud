@@ -16,10 +16,11 @@ public class UiOtherService {
 
     @HystrixCommand(fallbackMethod = "failMsg")
     public JsonReturn deletePerson(String id) {
-        return restTemplate.getForObject("", JsonReturn.class, id);
+        System.out.print(id);
+        return restTemplate.getForObject("http://localhost/person/person/delete", JsonReturn.class, id);
     }
 
-    public JsonReturn failMsg() {
+    public JsonReturn failMsg(String msg) {
         JsonReturn jsonReturn = new JsonReturn();
         jsonReturn.setMsg("请求失败");
         jsonReturn.setCode(JsonReturn.ERROR_CODE);

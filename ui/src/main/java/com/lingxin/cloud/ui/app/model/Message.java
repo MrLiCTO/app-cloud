@@ -1,13 +1,9 @@
 package com.lingxin.cloud.ui.app.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
-@Document(collection = "message")
 public class Message implements Serializable {
-    @Id
     private String id;
     private String type;
     private String title;
