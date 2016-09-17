@@ -22,7 +22,7 @@ public class UiService {
         return personService.save(person);
     }
 
-    public JsonReturn personList() {
+    public JsonReturn personList(String msg) {
         return personService.findAll();
     }
 
@@ -31,7 +31,7 @@ public class UiService {
         return messageService.save(message);
     }
 
-    public JsonReturn messageList() {
+    public JsonReturn messageList(String msg) {
         return messageService.findAll();
     }
 }

@@ -27,7 +27,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public void delete(String id) {
-        personMapper.selectByPrimaryKey(id);
+        personMapper.deleteByPrimaryKey(id);
     }
 
     @Override

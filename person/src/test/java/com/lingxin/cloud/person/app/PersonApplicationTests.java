@@ -23,12 +23,14 @@ public class PersonApplicationTests {
 
     @Test
     public void saveTest() {
-        Person person = new Person();
-        person.setAge(24);
-        person.setId("3");
-        person.setName("百度呵呵");
-        person.setSex("男");
-        personCustomMapper.save(person);
+        for (int i = 1; i < 36; i++) {
+            Person person = new Person();
+            person.setAge(i + 10);
+            person.setId(i + 10 + "");
+            person.setName("百度呵呵" + i);
+            person.setSex(i % 2 == 0 ? "男" : "女");
+            personCustomMapper.save(person);
+        }
     }
 
     @Test

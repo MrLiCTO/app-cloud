@@ -24,8 +24,9 @@ public class PersonController {
     }
 
     @RequestMapping("delete")
-    public JsonReturn delete() {
-        return uiOtherService.deletePerson("1");
+    public JsonReturn delete(String id) {
+        //return personService.delete(id);
+        return uiOtherService.deletePerson(id);
     }
 
 }
