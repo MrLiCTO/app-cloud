@@ -1,6 +1,7 @@
 package com.lingxin.cloud.ui.app.controller;
 
 import com.lingxin.cloud.ui.app.model.JsonReturn;
+import com.lingxin.cloud.ui.app.model.Person;
 import com.lingxin.cloud.ui.app.service.PersonService;
 import com.lingxin.cloud.ui.app.service.UiOtherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class PersonController {
     public JsonReturn delete(String id) {
         //return personService.delete(id);
         return uiOtherService.deletePerson(id);
+    }
+
+    @RequestMapping("save")
+    public JsonReturn save(Person person) {
+        return uiOtherService.savePerson(new Person());
     }
 
 }
