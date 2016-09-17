@@ -15,7 +15,7 @@ import java.util.Map;
 @Service
 public class UiOtherService {
     @Autowired
-    private RestTemplate restTemplate;
+    RestTemplate restTemplate;
 
     @HystrixCommand(fallbackMethod = "failMsg")
     public JsonReturn deletePerson(String id) {
