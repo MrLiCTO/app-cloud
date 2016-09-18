@@ -5,6 +5,7 @@ import com.lingxin.cloud.person.app.model.Person;
 import com.lingxin.cloud.person.app.response.JsonReturn;
 import com.lingxin.cloud.person.app.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +35,7 @@ public class PersonController {
     }
 
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public JsonReturn save(Person person) {
+    public JsonReturn save(@RequestBody Person person) {
         JsonReturn res = new JsonReturn();
         personService.save(person);
         res.setCode(JsonReturn.SUCCESS_CODE);

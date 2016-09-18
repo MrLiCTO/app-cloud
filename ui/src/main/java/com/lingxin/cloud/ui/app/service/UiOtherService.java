@@ -5,6 +5,9 @@ import com.lingxin.cloud.ui.app.model.JsonReturn;
 import com.lingxin.cloud.ui.app.model.Person;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -55,10 +58,21 @@ public class UiOtherService {
     @HystrixCommand(fallbackMethod = "failMsgSave")
     public JsonReturn savePerson(Person person) {
         person.setAge(10);
-        person.setId(100 + "");
+        person.setId(10035 + "");
         person.setName("百度呵呵");
         person.setSex("女");
-        return restTemplate.postForEntity("http://person/person/save?person = {person}", null, JsonReturn.class, person).getBody();
+
+        HttpHeaders headers = new HttpHeaders();
+        MediaType type = MediaType.parseMediaType("application/json; charset=UTF-8");
+        headers.setContentType(type);
+        headers.add("Accept", MediaType.APPLICATION_JSON.toString());
+        String jsonString = JSON.toJSONString(person);
+        HttpEntity<String> personEntity = new HttpEntity<String>(jsonString, headers);
+        //String id="110";
+        //return restTemplate.postForEntity("http://person/person/save?id={id}",null, JsonReturn.class,id).getBody();//成功
+        //return restTemplate.postForEntity("http://person/person/save",person, JsonReturn.class).getBody();//成功
+        return restTemplate.postForEntity("http://person/person/save", personEntity, JsonReturn.class).getBody();//成功
+        //return restTemplate.postForEntity("http://person/person/save",jsonString, JsonReturn.class).getBody();//这样传递失败了
     }
 
     public JsonReturn failMsgSave(Person person) {
