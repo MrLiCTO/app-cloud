@@ -17,15 +17,18 @@ public interface PersonService {
     @RequestMapping(method = RequestMethod.POST, value = "person/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn save(@RequestBody Person person);
 
-    /*@RequestMapping(method = RequestMethod.GET, value = "person/delete/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    /*@RequestMapping(method = RequestMethod.GET, value = "person/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn delete(@RequestParam("id") String id);*/
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "person/delete/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.DELETE, value = "person/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn delete(@RequestParam("id") String id);
 
-    @RequestMapping(method = RequestMethod.PUT, value = "person/update", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.PUT, value = "person/update", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn update(@RequestBody Person person);
 
     @RequestMapping(method = RequestMethod.GET, value = "person/list", produces = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn findAll();
+
+    @RequestMapping(method = RequestMethod.GET, value = "person/findById/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    JsonReturn findById(@RequestParam("id") String id);
 }

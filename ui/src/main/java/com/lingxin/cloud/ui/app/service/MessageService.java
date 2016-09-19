@@ -16,12 +16,15 @@ public interface MessageService {
     @RequestMapping(method = RequestMethod.POST, value = "message/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn save(@RequestBody Message message);
 
-    @RequestMapping(method = RequestMethod.GET, value = "message/delete", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.DELETE, value = "message/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn delete(@RequestBody String id);
 
-    @RequestMapping(method = RequestMethod.POST, value = "message/update", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(method = RequestMethod.PUT, value = "message/update", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn update(@RequestBody Message message);
 
     @RequestMapping(method = RequestMethod.GET, value = "message/list", produces = MediaType.APPLICATION_JSON_VALUE)
     JsonReturn findAll();
+
+    @RequestMapping(method = RequestMethod.GET, value = "message/findById/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    JsonReturn findById(@RequestBody String id);
 }

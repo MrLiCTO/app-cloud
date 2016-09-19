@@ -7,6 +7,8 @@ import com.lingxin.cloud.message.app.service.MessageService;
 import com.lingxin.cloud.message.app.utils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +36,7 @@ public class MessageCotroller {
     }
 
     @RequestMapping("save")
-    public JsonReturn save(Message message) {
+    public JsonReturn save(@RequestBody Message message) {
         JsonReturn res = new JsonReturn();
         messageService.save(message);
         res.setCode(JsonReturn.SUCCESS_CODE);
@@ -42,8 +44,8 @@ public class MessageCotroller {
         return res;
     }
 
-    @RequestMapping("delete")
-    public JsonReturn save(String id) {
+    @RequestMapping("delete/{id}")
+    public JsonReturn save(@PathVariable("id") String id) {
         JsonReturn res = new JsonReturn();
         messageService.delete(id);
         res.setCode(JsonReturn.SUCCESS_CODE);
@@ -51,8 +53,18 @@ public class MessageCotroller {
         return res;
     }
 
+    @RequestMapping("findById/{id}")
+    public JsonReturn findById(@PathVariable("id") String id) {
+        JsonReturn res = new JsonReturn();
+        Message message = messageService.findById(id);
+        res.setCode(JsonReturn.SUCCESS_CODE);
+        res.setMsg(msg);
+        res.setData(JSON.toJSONString(message));
+        return res;
+    }
+
     @RequestMapping("update")
-    public JsonReturn update(Message message) {
+    public JsonReturn update(@RequestBody Message message) {
         JsonReturn res = new JsonReturn();
         Message mess;
         if (message != null) {

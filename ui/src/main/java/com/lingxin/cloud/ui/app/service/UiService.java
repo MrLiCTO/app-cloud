@@ -17,13 +17,52 @@ public class UiService {
     @Autowired
     private MessageService messageService;
 
+    //person-----------------------------
     @HystrixCommand(fallbackMethod = "personList")
     public JsonReturn savePerson(Person person) {
         return personService.save(person);
     }
 
-    public JsonReturn personList(String msg) {
+    public JsonReturn personList(Person person) {
         return personService.findAll();
+    }
+
+    @HystrixCommand(fallbackMethod = "personList")
+    public JsonReturn deletePerson(String id) {
+        return personService.delete(id);
+    }
+
+    @HystrixCommand(fallbackMethod = "personList")
+    public JsonReturn getPersonById(String id) {
+        return personService.findById(id);
+    }
+
+    public JsonReturn personList(String id) {
+        return personService.findAll();
+    }
+
+    @HystrixCommand(fallbackMethod = "personList")
+    public JsonReturn listPerson() {
+        return personService.findAll();
+    }
+
+    public JsonReturn personList() {
+        return personService.findAll();
+    }
+
+    //message----------------------
+    @HystrixCommand(fallbackMethod = "messageList")
+    public JsonReturn deleteMessage(String id) {
+        return messageService.delete(id);
+    }
+
+    @HystrixCommand(fallbackMethod = "messageList")
+    public JsonReturn getMessageById(String id) {
+        return messageService.findById(id);
+    }
+
+    public JsonReturn messageList(String id) {
+        return messageService.findAll();
     }
 
     @HystrixCommand(fallbackMethod = "messageList")
@@ -31,7 +70,16 @@ public class UiService {
         return messageService.save(message);
     }
 
-    public JsonReturn messageList(String msg) {
+    public JsonReturn messageList(Message message) {
+        return messageService.findAll();
+    }
+
+    @HystrixCommand(fallbackMethod = "messageList")
+    public JsonReturn listMessage() {
+        return messageService.findAll();
+    }
+
+    public JsonReturn messageList() {
         return messageService.findAll();
     }
 }
