@@ -7,10 +7,7 @@ import com.lingxin.cloud.message.app.service.MessageService;
 import com.lingxin.cloud.message.app.utils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +22,7 @@ public class MessageCotroller {
     @Value("${my.message}")
     private String msg;
 
-    @RequestMapping("list")
+    @RequestMapping(value = "list", method = RequestMethod.GET)
     public JsonReturn list() {
         JsonReturn res = new JsonReturn();
         List<Message> list = messageService.findAll();
@@ -35,7 +32,7 @@ public class MessageCotroller {
         return res;
     }
 
-    @RequestMapping("save")
+    @RequestMapping(value = "save", method = RequestMethod.POST)
     public JsonReturn save(@RequestBody Message message) {
         JsonReturn res = new JsonReturn();
         messageService.save(message);
@@ -44,7 +41,7 @@ public class MessageCotroller {
         return res;
     }
 
-    @RequestMapping("delete/{id}")
+    @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
     public JsonReturn save(@PathVariable("id") String id) {
         JsonReturn res = new JsonReturn();
         messageService.delete(id);
@@ -53,7 +50,7 @@ public class MessageCotroller {
         return res;
     }
 
-    @RequestMapping("findById/{id}")
+    @RequestMapping(value = "findById/{id}", method = RequestMethod.GET)
     public JsonReturn findById(@PathVariable("id") String id) {
         JsonReturn res = new JsonReturn();
         Message message = messageService.findById(id);
@@ -63,7 +60,7 @@ public class MessageCotroller {
         return res;
     }
 
-    @RequestMapping("update")
+    @RequestMapping(value = "update", method = RequestMethod.PUT)
     public JsonReturn update(@RequestBody Message message) {
         JsonReturn res = new JsonReturn();
         Message mess;

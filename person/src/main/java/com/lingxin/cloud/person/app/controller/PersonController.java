@@ -20,7 +20,7 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping("list")
+    @RequestMapping(value = "list", method = RequestMethod.GET)
     public JsonReturn list() {
         JsonReturn res = new JsonReturn();
         //List<Person> persons=personCustomMapper.findList("%度%");
@@ -49,7 +49,7 @@ public class PersonController {
         return res;
     }*/
 
-    @RequestMapping("delete/{id}")
+    @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
     public JsonReturn delete(@PathVariable(value = "id") String id) {
         JsonReturn res = new JsonReturn();
         personService.delete(id);
@@ -58,7 +58,7 @@ public class PersonController {
         return res;
     }
 
-    @RequestMapping("findById/{id}")
+    @RequestMapping(value = "findById/{id}", method = RequestMethod.GET)
     public JsonReturn findById(@PathVariable(value = "id") String id) {
         JsonReturn res = new JsonReturn();
         Person person = personService.findById(id);
@@ -68,8 +68,8 @@ public class PersonController {
         return res;
     }
 
-    @RequestMapping("update")
-    public JsonReturn update(Person person) {
+    @RequestMapping(value = "update", method = RequestMethod.PUT)
+    public JsonReturn update(@RequestBody Person person) {
         JsonReturn res = new JsonReturn();
         personService.update(person);
         res.setMsg("hello world");

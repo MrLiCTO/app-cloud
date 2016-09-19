@@ -27,8 +27,8 @@ public class PersonController {
     @RequestMapping("delete")
     public JsonReturn delete(String id) {
         id = "9999";
-        return personService.delete(id);
-        //return uiPersonService.deletePerson(id);
+        //return personService.delete(id);
+        return uiPersonService.deletePerson(id);
     }
 
     @RequestMapping("save")
@@ -38,15 +38,15 @@ public class PersonController {
         person.setAge(20);
         person.setName("haoren");
         person.setSex("男");
-        return personService.save(person);
-        //return uiPersonService.savePerson(person);
+        //return personService.save(person);
+        return uiPersonService.savePerson(person);
     }
 
     @RequestMapping("findById")
     public JsonReturn findById(String id) {
         id = "9999";
-        return personService.findById(id);
-        //return uiPersonService.getPerson(id);
+        //return personService.findById(id);
+        return uiPersonService.getPerson(id);
     }
 
     @RequestMapping("update")
@@ -56,8 +56,8 @@ public class PersonController {
         person.setAge(20);
         person.setName("哈哈");
         person.setSex("女");
-        return personService.update(person);
-        //return uiPersonService.editPerson(person);
+        //return personService.update(person);
+        return uiPersonService.editPerson(person);
     }
 
 }

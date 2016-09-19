@@ -25,11 +25,6 @@ public class UiPersonService {
     //增---------post
     @HystrixCommand(fallbackMethod = "failMsgSave")
     public JsonReturn savePerson(Person person) {
-        person.setAge(10);
-        person.setId(10035 + "");
-        person.setName("百度呵呵");
-        person.setSex("女");
-
         HttpHeaders headers = new HttpHeaders();
         MediaType type = MediaType.parseMediaType("application/json; charset=UTF-8");
         headers.setContentType(type);
@@ -58,16 +53,16 @@ public class UiPersonService {
         Map map = new HashMap<String, String>();
         map.put("id", id);
         //return restTemplate.delete("http://person/person/delete?id=" + id);
-        //return restTemplate.delete("http://person/person//delete/{id}",id);
-        restTemplate.delete("http://person/person//delete/{id}", map);
+        //return restTemplate.delete("http://person/person/delete/{id}",id);
+        restTemplate.delete("http://person/person/delete/{id}", map);
         JsonReturn jsonReturn = new JsonReturn();
         jsonReturn.setMsg("请求成功");
         jsonReturn.setCode(JsonReturn.SUCCESS_CODE);
         return jsonReturn;
         //return restTemplate.getForObject("http://person/person/list", JsonReturn.class);
         //return restTemplate.getForObject("http://person/person/delete?id=" + id, JsonReturn.class);
-        //return restTemplate.getForObject("http://person/person//delete/{id}", JsonReturn.class,id);
-        //return restTemplate.getForObject("http://person/person//delete/{id}", JsonReturn.class,map);
+        //return restTemplate.getForObject("http://person/person/delete/{id}", JsonReturn.class,id);
+        //return restTemplate.getForObject("http://person/person/delete/{id}", JsonReturn.class,map);
 
         /*return restTemplate.getForObject("http://localhost:8883/person/list", JsonReturn.class);
         return restTemplate.getForObject("http://localhost:8883/person/delete?id="+id, JsonReturn.class);
@@ -96,7 +91,7 @@ public class UiPersonService {
         headers.add("Accept", MediaType.APPLICATION_JSON.toString());
         String jsonString = JSON.toJSONString(person);
         HttpEntity<String> personEntity = new HttpEntity<String>(jsonString, headers);
-        restTemplate.put("http://person/person/save", personEntity, JsonReturn.class);//与post请求同理
+        restTemplate.put("http://person/person/update", personEntity, JsonReturn.class);//与post请求同理
         JsonReturn jsonReturn = new JsonReturn();
         jsonReturn.setMsg("请求成功");
         jsonReturn.setCode(JsonReturn.SUCCESS_CODE);
