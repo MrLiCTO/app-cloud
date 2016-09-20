@@ -6,12 +6,10 @@ import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RestResource;
 
-import java.io.Serializable;
-
 /**
  * Created by Mr_Li on 2016/8/30.
  */
-public interface MessageRepository extends QueryDslPredicateExecutor<Message>, MongoRepository<Message, Serializable> {
+public interface MessageRepository extends QueryDslPredicateExecutor<Message>, MongoRepository<Message, String> {
     @RestResource(path = "byNameLike", rel = "byNameLike")
     Message findByTitleContaining(@Param("title") String title);
 }

@@ -24,7 +24,8 @@ public class MessageApplicationTests {
 //            m.setType("消息" + i);
 //            messageRepository.save(m);
 //        }
-        messageRepository.delete("12");
+        //Message message = messageRepository.findOne("1");
+        messageRepository.delete("1");
     }
 
 }
