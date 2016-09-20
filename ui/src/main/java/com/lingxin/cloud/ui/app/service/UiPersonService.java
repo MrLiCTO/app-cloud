@@ -104,7 +104,7 @@ public class UiPersonService {
 
     //查--------------------get
     @HystrixCommand(fallbackMethod = "failMsgList")
-    public JsonReturn editPerson() {
+    public JsonReturn listPerson() {
         return restTemplate.getForObject("http://person/person/list", JsonReturn.class);
     }
 

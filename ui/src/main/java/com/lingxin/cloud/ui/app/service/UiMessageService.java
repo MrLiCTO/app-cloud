@@ -46,7 +46,7 @@ public class UiMessageService {
     //删---------delete
     @HystrixCommand(fallbackMethod = "failMsgDelete")
     public JsonReturn deletePerson(String id) {
-        restTemplate.delete("http://message/message/delete?id=" + id, id);
+        restTemplate.delete("http://message/message/delete/{id}", id);
         JsonReturn jsonReturn = new JsonReturn();
         jsonReturn.setMsg("请求成功");
         jsonReturn.setCode(JsonReturn.SUCCESS_CODE);
@@ -71,7 +71,7 @@ public class UiMessageService {
         headers.add("Accept", MediaType.APPLICATION_JSON.toString());
         String jsonString = JSON.toJSONString(message);
         HttpEntity<String> personEntity = new HttpEntity<String>(jsonString, headers);
-        restTemplate.put("http://message/message/save", personEntity, JsonReturn.class);//与post请求同理
+        restTemplate.put("http://message/message/update", personEntity);//与post请求同理
         JsonReturn jsonReturn = new JsonReturn();
         jsonReturn.setMsg("请求成功");
         jsonReturn.setCode(JsonReturn.SUCCESS_CODE);

@@ -21,7 +21,8 @@ public class PersonController {
 
     @RequestMapping("list")
     public JsonReturn list() {
-        return personService.findAll();
+        //return personService.findAll();
+        return uiPersonService.listPerson();
     }
 
     @RequestMapping("delete")

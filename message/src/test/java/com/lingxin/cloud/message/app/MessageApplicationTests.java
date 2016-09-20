@@ -1,6 +1,5 @@
 package com.lingxin.cloud.message.app;
 
-import com.lingxin.cloud.message.app.model.Message;
 import com.lingxin.cloud.message.app.repository.MessageRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,13 +17,14 @@ public class MessageApplicationTests {
 
     @Test
     public void contextLoads() {
-        for (int i = 0; i < 10; i++) {
-            Message m = new Message();
-            m.setContent("测试message模块" + i);
-            m.setTitle("测试" + i);
-            m.setType("消息" + i);
-            messageRepository.save(m);
-        }
+//        for (int i = 0; i < 10; i++) {
+//            Message m = new Message();
+//            m.setContent("测试message模块" + i);
+//            m.setTitle("测试" + i);
+//            m.setType("消息" + i);
+//            messageRepository.save(m);
+//        }
+        messageRepository.delete("12");
     }
 
 }

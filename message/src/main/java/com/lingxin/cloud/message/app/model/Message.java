@@ -1,11 +1,13 @@
 package com.lingxin.cloud.message.app.model;
 
+import org.mongodb.morphia.annotations.Entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
 @Document(collection = "message")
+@Entity(value = "message", noClassnameStored = true)
 public class Message implements Serializable {
     @Id
     private String id;
