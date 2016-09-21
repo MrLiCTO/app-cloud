@@ -1,4 +1,4 @@
-package com.lingxin.cloud.person.app.model;
+package com.lingxin.cloud.app.person.model;
 
 public class Person {
     private String id;

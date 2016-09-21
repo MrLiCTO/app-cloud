@@ -1,6 +1,6 @@
 package com.lingxin.cloud.message.app.repository;
 
-import com.lingxin.cloud.message.app.model.Message;
+import com.lingxin.cloud.app.message.model.Message;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.data.repository.query.Param;

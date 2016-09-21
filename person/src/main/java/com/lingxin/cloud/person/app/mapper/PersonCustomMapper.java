@@ -1,7 +1,8 @@
 package com.lingxin.cloud.person.app.mapper;
 
-import com.lingxin.cloud.person.app.model.Person;
-import com.lingxin.cloud.person.app.pojo.PersonPojo;
+
+import com.lingxin.cloud.app.person.model.Person;
+import com.lingxin.cloud.app.person.pojo.PersonPojo;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

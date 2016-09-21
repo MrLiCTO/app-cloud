@@ -1,6 +1,6 @@
 package com.lingxin.cloud.message.app.service.impl;
 
-import com.lingxin.cloud.message.app.model.Message;
+import com.lingxin.cloud.app.message.model.Message;
 import com.lingxin.cloud.message.app.repository.MessageRepository;
 import com.lingxin.cloud.message.app.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;

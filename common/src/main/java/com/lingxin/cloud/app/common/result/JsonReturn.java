@@ -1,22 +1,22 @@
-package com.lingxin.cloud.person.app.response;
+package com.lingxin.cloud.app.common.result;
 
 /**
  * Created by Mr_Li on 2016/8/31.
  */
 public class JsonReturn {
 
-    public final static Integer SUCCESS_CODE = 200;
-    public final static Integer ERROR_CODE = 404;
+    public final static String SUCCESS_CODE = "200";
+    public final static String ERROR_CODE = "404";
 
-    private Integer code;
+    private String code;
     private String msg;
     private String data;
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

@@ -1,7 +1,8 @@
 package com.lingxin.cloud.ui.app.service;
 
-import com.lingxin.cloud.ui.app.model.JsonReturn;
-import com.lingxin.cloud.ui.app.model.Message;
+
+import com.lingxin.cloud.app.common.result.JsonReturn;
+import com.lingxin.cloud.app.message.model.Message;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;

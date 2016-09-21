@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lingxin.cloud.person.app.mapper.PersonCustomMapper">
-    <select id="selectAllByName" resultType="com.lingxin.cloud.person.app.model.Person"
-            parameterType="com.lingxin.cloud.person.app.pojo.PersonPojo">
+    <select id="selectAllByName" resultType="com.lingxin.cloud.app.person.model.Person"
+            parameterType="com.lingxin.cloud.app.person.pojo.PersonPojo">
         select * from person
         <where>
             <if test="person!=null">

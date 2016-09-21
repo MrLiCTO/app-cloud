@@ -1,6 +1,6 @@
 package com.lingxin.cloud.ui.app;
 
-import com.lingxin.cloud.ui.app.model.JsonReturn;
+import com.lingxin.cloud.app.common.result.JsonReturn;
 import com.lingxin.cloud.ui.app.service.PersonService;
 import com.lingxin.cloud.ui.app.service.UiPersonService;
 import org.junit.Test;

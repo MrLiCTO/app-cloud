@@ -1,7 +1,8 @@
 package com.lingxin.cloud.ui.app.controller;
 
-import com.lingxin.cloud.ui.app.model.JsonReturn;
-import com.lingxin.cloud.ui.app.model.Message;
+
+import com.lingxin.cloud.app.common.result.JsonReturn;
+import com.lingxin.cloud.app.message.model.Message;
 import com.lingxin.cloud.ui.app.service.MessageService;
 import com.lingxin.cloud.ui.app.service.UiMessageService;
 import org.springframework.beans.factory.annotation.Autowired;

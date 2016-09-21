@@ -1,4 +1,4 @@
-package com.lingxin.cloud.message.app.model;
+package com.lingxin.cloud.app.message.model;
 
 import com.mysema.query.types.Path;
 import com.mysema.query.types.PathMetadata;

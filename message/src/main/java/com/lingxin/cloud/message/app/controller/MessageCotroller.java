@@ -1,10 +1,10 @@
 package com.lingxin.cloud.message.app.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.lingxin.cloud.message.app.model.JsonReturn;
-import com.lingxin.cloud.message.app.model.Message;
+import com.lingxin.cloud.app.common.result.JsonReturn;
+import com.lingxin.cloud.app.common.utils.BeanUtils;
+import com.lingxin.cloud.app.message.model.Message;
 import com.lingxin.cloud.message.app.service.MessageService;
-import com.lingxin.cloud.message.app.utils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;

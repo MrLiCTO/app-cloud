@@ -1,4 +1,4 @@
-package com.lingxin.cloud.message.app.utils;
+package com.lingxin.cloud.app.common.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.FatalBeanException;

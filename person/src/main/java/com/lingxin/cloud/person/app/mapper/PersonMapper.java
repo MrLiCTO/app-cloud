@@ -1,7 +1,7 @@
 package com.lingxin.cloud.person.app.mapper;
 
-import com.lingxin.cloud.person.app.model.Person;
-import com.lingxin.cloud.person.app.model.PersonExample;
+import com.lingxin.cloud.app.person.model.Person;
+import com.lingxin.cloud.app.person.model.PersonExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

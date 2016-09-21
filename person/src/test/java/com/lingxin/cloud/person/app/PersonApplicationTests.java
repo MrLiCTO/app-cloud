@@ -1,8 +1,8 @@
 package com.lingxin.cloud.person.app;
 
+import com.lingxin.cloud.app.person.model.Person;
+import com.lingxin.cloud.app.person.pojo.PersonPojo;
 import com.lingxin.cloud.person.app.mapper.PersonCustomMapper;
-import com.lingxin.cloud.person.app.model.Person;
-import com.lingxin.cloud.person.app.pojo.PersonPojo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

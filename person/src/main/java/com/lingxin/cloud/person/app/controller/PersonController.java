@@ -1,8 +1,9 @@
 package com.lingxin.cloud.person.app.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.lingxin.cloud.person.app.model.Person;
-import com.lingxin.cloud.person.app.response.JsonReturn;
+import com.lingxin.cloud.app.common.result.JsonReturn;
+import com.lingxin.cloud.app.person.model.Person;
+import com.lingxin.cloud.person.app.mapper.PersonCustomMapper;
 import com.lingxin.cloud.person.app.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping("person")
 public class PersonController {
-    //@Autowired
-    //private PersonCustomMapper personCustomMapper;
+    @Autowired
+    private PersonCustomMapper personCustomMapper;
     @Autowired
     private PersonService personService;
 

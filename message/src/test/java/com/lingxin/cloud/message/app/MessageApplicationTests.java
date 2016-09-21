@@ -1,5 +1,6 @@
 package com.lingxin.cloud.message.app;
 
+
 import com.lingxin.cloud.message.app.repository.MessageRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;

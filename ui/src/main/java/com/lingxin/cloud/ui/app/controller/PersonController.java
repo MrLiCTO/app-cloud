@@ -1,7 +1,8 @@
 package com.lingxin.cloud.ui.app.controller;
 
-import com.lingxin.cloud.ui.app.model.JsonReturn;
-import com.lingxin.cloud.ui.app.model.Person;
+
+import com.lingxin.cloud.app.common.result.JsonReturn;
+import com.lingxin.cloud.app.person.model.Person;
 import com.lingxin.cloud.ui.app.service.PersonService;
 import com.lingxin.cloud.ui.app.service.UiPersonService;
 import org.springframework.beans.factory.annotation.Autowired;

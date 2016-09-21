@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lingxin.cloud.person.app.mapper.PersonMapper">
-  <resultMap id="BaseResultMap" type="com.lingxin.cloud.person.app.model.Person">
+  <resultMap id="BaseResultMap" type="com.lingxin.cloud.app.person.model.Person">
     <id column="id" property="id" jdbcType="VARCHAR"/>
     <result column="sex" property="sex" jdbcType="VARCHAR"/>
     <result column="age" property="age" jdbcType="INTEGER"/>
@@ -69,7 +69,7 @@
     id, sex, age, name
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap"
-          parameterType="com.lingxin.cloud.person.app.model.PersonExample">
+          parameterType="com.lingxin.cloud.app.person.model.PersonExample">
     select
     <if test="distinct">
       distinct
@@ -93,19 +93,19 @@
     delete from person
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.lingxin.cloud.person.app.model.PersonExample">
+  <delete id="deleteByExample" parameterType="com.lingxin.cloud.app.person.model.PersonExample">
     delete from person
     <if test="_parameter != null">
       <include refid="Example_Where_Clause"/>
     </if>
   </delete>
-  <insert id="insert" parameterType="com.lingxin.cloud.person.app.model.Person">
+  <insert id="insert" parameterType="com.lingxin.cloud.app.person.model.Person">
     insert into person (id, sex, age,
     name)
     values (#{id,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER},
     #{name,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.lingxin.cloud.person.app.model.Person">
+  <insert id="insertSelective" parameterType="com.lingxin.cloud.app.person.model.Person">
     insert into person
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -136,7 +136,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.lingxin.cloud.person.app.model.PersonExample"
+  <select id="countByExample" parameterType="com.lingxin.cloud.app.person.model.PersonExample"
           resultType="java.lang.Integer">
     select count(*) from person
     <if test="_parameter != null">
@@ -173,7 +173,7 @@
       <include refid="Update_By_Example_Where_Clause"/>
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.lingxin.cloud.person.app.model.Person">
+  <update id="updateByPrimaryKeySelective" parameterType="com.lingxin.cloud.app.person.model.Person">
     update person
     <set>
       <if test="sex != null">
@@ -188,7 +188,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.lingxin.cloud.person.app.model.Person">
+  <update id="updateByPrimaryKey" parameterType="com.lingxin.cloud.app.person.model.Person">
     update person
     set sex = #{sex,jdbcType=VARCHAR},
     age = #{age,jdbcType=INTEGER},

@@ -1,4 +1,4 @@
-package com.lingxin.cloud.message.app.model;
+package com.lingxin.cloud.app.message.model;
 
 import org.mongodb.morphia.annotations.Entity;
 import org.springframework.data.annotation.Id;

@@ -1,8 +1,8 @@
 package com.lingxin.cloud.ui.app.service;
 
 import com.alibaba.fastjson.JSON;
-import com.lingxin.cloud.ui.app.model.JsonReturn;
-import com.lingxin.cloud.ui.app.model.Message;
+import com.lingxin.cloud.app.common.result.JsonReturn;
+import com.lingxin.cloud.app.message.model.Message;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;

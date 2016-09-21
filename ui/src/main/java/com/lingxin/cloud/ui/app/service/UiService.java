@@ -1,8 +1,9 @@
 package com.lingxin.cloud.ui.app.service;
 
-import com.lingxin.cloud.ui.app.model.JsonReturn;
-import com.lingxin.cloud.ui.app.model.Message;
-import com.lingxin.cloud.ui.app.model.Person;
+
+import com.lingxin.cloud.app.common.result.JsonReturn;
+import com.lingxin.cloud.app.message.model.Message;
+import com.lingxin.cloud.app.person.model.Person;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
