@@ -36,11 +36,12 @@
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-servlet:1.19.1" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-server:1.19.1" level="project" />
     <orderEntry type="library" name="Maven: com.netflix.eureka:eureka-core:1.4.10" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-core:1.10.30" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-ec2:1.10.30" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-autoscaling:1.9.3" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-sts:1.9.3" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-route53:1.9.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-core:1.11.18" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.6" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-ec2:1.11.18" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-autoscaling:1.11.18" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-sts:1.11.18" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.amazonaws:aws-java-sdk-route53:1.11.18" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.netflix.governator:governator:1.12.10" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.netflix.governator:governator-core:1.12.10" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.ow2.asm:asm:5.0.4" level="project" />
