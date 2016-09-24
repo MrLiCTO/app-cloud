@@ -2,7 +2,7 @@ spring:
   application:
     name: config
   profiles:
-    active: native
+    active: git
 eureka:
   instance:
     non-secure-port: ${server.port:8888}
