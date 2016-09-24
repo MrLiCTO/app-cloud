@@ -21,9 +21,10 @@ public class PersonController {
     private UiPersonService uiPersonService;
 
     @RequestMapping("list")
-    public JsonReturn list() {
+    public JsonReturn list() throws Exception {
         //return personService.findAll();
-        return uiPersonService.listPerson();
+        throw new Exception("真失败......");
+        //return uiPersonService.listPerson();
     }
 
     @RequestMapping("delete")
