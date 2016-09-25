@@ -1,8 +1,6 @@
 package com.lingxin.cloud.ui.app;
 
-import com.lingxin.cloud.app.common.result.JsonReturn;
-import com.lingxin.cloud.ui.app.service.PersonService;
-import com.lingxin.cloud.ui.app.service.UiPersonService;
+import com.lingxin.cloud.ui.app.async.AsyncTask;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,19 +8,37 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.util.concurrent.Future;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = UiApplication.class)
 @WebAppConfiguration
 public class UiApplicationTests {
 
-    @Autowired
+    /*@Autowired
     private UiPersonService uiPersonService;
     @Autowired
-    private PersonService personService;
+    private PersonService personService;*/
+
+    @Autowired
+    private AsyncTask task;
 
     @Test
-    public void contextLoads() {
-        JsonReturn jsonReturn = uiPersonService.deletePerson("1");
+    public void contextLoads() throws Exception {
+        long start = System.currentTimeMillis();
+        Future<String> task1 = task.doTaskOne();
+        Future<String> task2 = task.doTaskTwo();
+        Future<String> task3 = task.doTaskThree();
+        while (true) {
+            if (task1.isDone() && task2.isDone() && task3.isDone()) {
+                // 三个任务都调用完成，退出循环等待
+                break;
+            }
+            Thread.sleep(1000);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("任务全部完成，总耗时：" + (end - start) + "毫秒");
+        //JsonReturn jsonReturn = uiPersonService.deletePerson("1");
         //System.out.print(JSON.toJSON(personService.findAll()));
     }
 
