@@ -23,8 +23,8 @@ public class PersonController {
     @RequestMapping("list")
     public JsonReturn list() throws Exception {
         //return personService.findAll();
-        throw new Exception("真失败......");
-        //return uiPersonService.listPerson();
+        //throw new Exception("真失败......");
+        return uiPersonService.listPerson();
     }
 
     @RequestMapping("delete")
