@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+</head>
+<head>
+    <meta charset="UTF-8"/>
+    <title>spring cloud 测试系统</title>
+</head>
+<body>
+<h3>出问题了</h3>
+<li>响应码:<span th:text="${errorInfo.code}"></span></li>
+<li>响应消息:<span th:text="${errorInfo.msg}"></span></li>
+<li>响应码:<span th:text="${errorInfo.data}"></span></li>
+</body>
+</html>
