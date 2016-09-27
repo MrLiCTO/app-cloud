@@ -1,8 +1,11 @@
 package com.lingxin.cloud.ui.app;
 
+import com.alibaba.fastjson.JSON;
+import com.lingxin.cloud.app.person.model.Person;
 import com.lingxin.cloud.ui.app.async.AsyncTask;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -22,6 +25,8 @@ public class UiApplicationTests {
 
     @Autowired
     private AsyncTask task;
+    @Autowired
+    private AmqpTemplate rabbitTemplate;
 
     @Test
     public void contextLoads() throws Exception {
@@ -42,4 +47,17 @@ public class UiApplicationTests {
         //System.out.print(JSON.toJSON(personService.findAll()));
     }
 
+    @Test
+    public void send() {
+        for (int i = 0; i < 10000; i++) {
+            Person person = new Person();
+            person.setAge(25);
+            person.setId(999 + 10 + i + "i");
+            person.setName("百度呵呵999" + i);
+            person.setSex("男");
+            String context = JSON.toJSONString(person);
+            System.out.println("Sender : " + context);
+            this.rabbitTemplate.convertAndSend("person", context);
+        }
+    }
 }
