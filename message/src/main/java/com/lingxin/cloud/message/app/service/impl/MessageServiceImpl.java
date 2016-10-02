@@ -4,6 +4,8 @@ import com.lingxin.cloud.app.message.model.Message;
 import com.lingxin.cloud.message.app.repository.MessageRepository;
 import com.lingxin.cloud.message.app.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,35 +19,31 @@ public class MessageServiceImpl implements MessageService {
     private MessageRepository messageRepository;
 
     @Override
-    //@CachePut(value = "findById")
-    //@CacheEvict(value = "findAll")
     public Message save(Message message) {
         Message msg = messageRepository.save(message);
         return msg;
     }
 
     @Override
-    //@CachePut(value = "findById")
-    //@CacheEvict(value = "findAll")
+    @CacheEvict(value = "findById", key = "#message.id")
     public Message update(Message message) {
         Message msg = messageRepository.save(message);
         return msg;
     }
 
     @Override
-    //@CacheEvict(value = {"findAll","messageUpdate","messageSave","findById"})
+    @CacheEvict(value = {"findById"})
     public void delete(String id) {
         messageRepository.delete(id);
     }
 
     @Override
-    //@Cacheable(value = "findById")
+    @Cacheable(value = "findById")
     public Message findById(String id) {
         return messageRepository.findOne(id);
     }
 
     @Override
-    //@Cacheable(value = "findAll")
     public List<Message> findAll() {
         return messageRepository.findAll();
     }
