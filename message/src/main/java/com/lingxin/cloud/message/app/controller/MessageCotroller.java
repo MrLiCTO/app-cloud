@@ -7,6 +7,7 @@ import com.lingxin.cloud.app.message.model.Message;
 import com.lingxin.cloud.message.app.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("message")
+@RefreshScope
 public class MessageCotroller {
     @Autowired
     private MessageService messageService;

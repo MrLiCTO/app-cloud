@@ -6,6 +6,7 @@ import com.lingxin.cloud.app.person.model.Person;
 import com.lingxin.cloud.person.app.mapper.PersonCustomMapper;
 import com.lingxin.cloud.person.app.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("person")
+@RefreshScope
 public class PersonController {
     @Autowired
     private PersonCustomMapper personCustomMapper;

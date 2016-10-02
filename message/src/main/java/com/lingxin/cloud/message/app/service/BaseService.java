@@ -6,9 +6,9 @@ import java.util.List;
  * Created by Mr_Li on 2016/9/2.
  */
 public interface BaseService<T> {
-    void save(T t);
+    T save(T t);
 
-    void update(T t);
+    T update(T t);
 
     void delete(String id);
 

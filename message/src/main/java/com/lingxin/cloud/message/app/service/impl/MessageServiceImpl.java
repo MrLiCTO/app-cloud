@@ -17,26 +17,35 @@ public class MessageServiceImpl implements MessageService {
     private MessageRepository messageRepository;
 
     @Override
-    public void save(Message message) {
-        messageRepository.save(message);
+    //@CachePut(value = "findById")
+    //@CacheEvict(value = "findAll")
+    public Message save(Message message) {
+        Message msg = messageRepository.save(message);
+        return msg;
     }
 
     @Override
-    public void update(Message message) {
-        messageRepository.save(message);
+    //@CachePut(value = "findById")
+    //@CacheEvict(value = "findAll")
+    public Message update(Message message) {
+        Message msg = messageRepository.save(message);
+        return msg;
     }
 
     @Override
+    //@CacheEvict(value = {"findAll","messageUpdate","messageSave","findById"})
     public void delete(String id) {
         messageRepository.delete(id);
     }
 
     @Override
+    //@Cacheable(value = "findById")
     public Message findById(String id) {
         return messageRepository.findOne(id);
     }
 
     @Override
+    //@Cacheable(value = "findAll")
     public List<Message> findAll() {
         return messageRepository.findAll();
     }
