@@ -8,4 +8,4 @@ logging:
   level:
     root: info
 my:
-  message: I'm best!I'm best!I'm best!I'm best!I'm best!I'm best!
+  message: I'm best!
