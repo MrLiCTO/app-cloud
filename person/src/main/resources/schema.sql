@@ -1,0 +1,9 @@
+CREATE TABLE `people` (
+  `id`   VARCHAR(255) NOT NULL,
+  `sex`  VARCHAR(255) DEFAULT NULL,
+  `age`  INT(11)      DEFAULT NULL,
+  `name` VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
