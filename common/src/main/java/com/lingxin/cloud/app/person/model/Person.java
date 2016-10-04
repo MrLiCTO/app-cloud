@@ -1,12 +1,14 @@
 package com.lingxin.cloud.app.person.model;
 
+import javax.validation.constraints.Size;
+
 public class Person {
     private String id;
 
     private String sex;
 
     private Integer age;
-
+    @Size(max = 5, min = 1)
     private String name;
 
     public String getId() {
