@@ -4,7 +4,6 @@
         <artifactId>app-parent</artifactId>
         <groupId>com.lingxin.cloud</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
