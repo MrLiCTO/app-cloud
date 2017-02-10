@@ -1,2 +1,2 @@
 # app-cloud
-自学spring boot项目,所写的代码
+自学spring cloud 微服务架构,所写的代码
